@@ -6,7 +6,7 @@
 */
 
 #include <stdio.h>
-#include "sys_plat.h"
+#include <platform/sys_plat.h>
 
 int main() {
     pcap_t* pcap = pcap_device_open();
