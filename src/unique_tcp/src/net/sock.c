@@ -1,13 +1,12 @@
-#include "sock.h"
 
-#include "dbg.h"
-#include "exmsg.h"
-#include "raw.h"
-#include "socket.h"
-#include "sys.h"
-#include "tcp.h"
-#include "tools.h"
-#include "udp.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/raw.h>
+#include <unique_tcp/net/tcp.h>
+#include <unique_tcp/net/sys.h>
+#include <unique_tcp/net/udp.h>
+#include <unique_tcp/net/sock.h>
+#include <unique_tcp/net/tools.h>
+#include <unique_tcp/net/exmsg.h>
 
 #define SOCKET_MAX_NR (RAW_MAX_NR + UDP_MAX_NR + TCP_MAX_NR)
 

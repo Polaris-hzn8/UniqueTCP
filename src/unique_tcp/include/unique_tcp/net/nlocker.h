@@ -1,8 +1,8 @@
 #ifndef NLOCKER_H
 #define NLOCKER_H
 
-#include "net_err.h"
-#include "sys_plat.h"
+#include <unique_tcp/net/net_err.h>
+#include <unique_tcp/platform/sys_plat.h>
 
 typedef enum _nlocker_type_t {
   NLOCKER_NONE,

@@ -1,10 +1,10 @@
 #ifndef ARP_H
 #define ARP_H
 
-#include "ether.h"
-#include "ipaddr.h"
-#include "net_err.h"
-#include "pktbuf.h"
+#include <unique_tcp/net/ether.h>
+#include <unique_tcp/net/ipaddr.h>
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/net_err.h>
 
 #define ARP_HW_ETHER 1
 #define ARP_REQUEST 1

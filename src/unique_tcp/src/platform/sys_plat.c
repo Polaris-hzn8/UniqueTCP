@@ -1,14 +1,11 @@
 ﻿/**
- * @file sys_plat.c
- * @author lishutong (527676163@qq.com)
- * @brief 不同操作系统平台的接口
- * @version 0.110
- * @date 2022-12-19
- *
- * @copyright Copyright (c) 2022
- *
- */
-#include "sys_plat.h"
+ * @author: luochenhao
+ * @email: lch2022fox@163.com
+ * @time: Sun 17 May 2026 13:20:40 CST
+ * @brief: 不同操作系统平台的接口
+*/
+
+#include <unique_tcp/platform/sys_plat.h>
 
 #if defined(SYS_PLAT_X86OS)
 #include "dev/time.h"

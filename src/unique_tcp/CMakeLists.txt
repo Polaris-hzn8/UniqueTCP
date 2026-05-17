@@ -5,8 +5,6 @@ add_library(unique_tcp SHARED ${NET_SOURCES} ${PLATFORM_SOURCES})
 
 target_include_directories(unique_tcp PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/unique_tcp>"
-  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/unique_tcp/net>"
-  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/unique_tcp/platform>"
   "$<BUILD_INTERFACE:${UniqueTCP_NPCAP_ROOT}/Include>"
 )
 

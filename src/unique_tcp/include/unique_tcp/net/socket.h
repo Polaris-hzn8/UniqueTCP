@@ -2,9 +2,8 @@
 #define SOCKET_H
 
 #include <stdint.h>
-
-#include "ipv4.h"
-#include "sock.h"
+#include <unique_tcp/net/ipv4.h>
+#include <unique_tcp/net/sock.h>
 
 #undef INADDR_ANY
 #define INADDR_ANY 0x00000000

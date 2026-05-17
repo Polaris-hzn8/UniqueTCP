@@ -1,11 +1,10 @@
-#include "netif_pcap.h"
 
-#include "dbg.h"
-#include "ether.h"
-#include "exmsg.h"
-#include "netif.h"
-#include "pcap.h"
-#include "sys_plat.h"
+#include <pcap/pcap.h>
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/exmsg.h>
+#include <unique_tcp/net/netif.h>
+#include <unique_tcp/platform/sys_plat.h>
+#include <unique_tcp/platform/netif_pcap.h>
 
 void recv_thread(void* arg) {
   plat_printf("recv thread is running...\n");

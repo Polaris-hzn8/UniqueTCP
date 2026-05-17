@@ -1,7 +1,7 @@
-#include "tools.h"
 
-#include "dbg.h"
-#include "net_err.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/tools.h>
+#include <unique_tcp/net/net_err.h>
 
 static int is_little_endian(void) {
   uint16_t v = 0x1234;

@@ -1,14 +1,14 @@
-﻿#include "dns.h"
-
-#include "dbg.h"
-#include "mblock.h"
-#include "net_api.h"
-#include "net_cfg.h"
-#include "nlist.h"
-#include "socket.h"
-#include "timer.h"
-#include "tools.h"
-#include "udp.h"
+﻿
+#include <unique_tcp/net/dns.h>
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/udp.h>
+#include <unique_tcp/net/tools.h>
+#include <unique_tcp/net/timer.h>
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/socket.h>
+#include <unique_tcp/net/mblock.h>
+#include <unique_tcp/net/net_api.h>
+#include <unique_tcp/net/net_cfg.h>
 
 static net_timer_t entry_update_timer;
 static dns_entry_t dns_entry_tbl[DNS_ENTRY_SIZE];

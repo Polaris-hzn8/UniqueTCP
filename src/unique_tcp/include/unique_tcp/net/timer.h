@@ -1,9 +1,9 @@
 #ifndef TIMER_H
 #define TIMER_H
 
-#include "net_cfg.h"
-#include "net_err.h"
-#include "nlist.h"
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/net_cfg.h>
+#include <unique_tcp/net/net_err.h>
 
 #define NET_TIMER_RELOAD (1 << 0)
 

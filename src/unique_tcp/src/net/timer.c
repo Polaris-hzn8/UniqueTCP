@@ -1,7 +1,7 @@
-#include "timer.h"
 
-#include "dbg.h"
-#include "sys_plat.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/timer.h>
+#include <unique_tcp/platform/sys_plat.h>
 
 static nlist_t timer_list;
 

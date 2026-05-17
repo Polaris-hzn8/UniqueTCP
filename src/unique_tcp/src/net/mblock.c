@@ -1,7 +1,7 @@
-#include "mblock.h"
 
-#include "dbg.h"
-#include "nlist.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/mblock.h>
 
 net_err_t mblock_init(mblock_t* mblock, void* mem, int blk_size, int cnt, nlocker_type_t nlocker_type) {
   uint8_t* buf = (uint8_t*)mem;

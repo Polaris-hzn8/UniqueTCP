@@ -1,7 +1,7 @@
 #ifndef TCP_STATE_T
 #define TCP_STATE_T
 
-#include "tcp.h"
+#include <unique_tcp/net/tcp.h>
 
 typedef net_err_t (*tcp_proc_t)(tcp_t*, tcp_seg_t* seg);
 

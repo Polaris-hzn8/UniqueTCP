@@ -2,8 +2,7 @@
 #define TCP_BUFF_H
 
 #include <stdint.h>
-
-#include "pktbuf.h"
+#include <unique_tcp/net/pktbuf.h>
 
 typedef struct _tcp_buf_t {
   uint8_t* data;

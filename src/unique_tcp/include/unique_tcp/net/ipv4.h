@@ -2,11 +2,10 @@
 #define IPV4_H
 
 #include <stdint.h>
-
-#include "net_cfg.h"
-#include "net_err.h"
-#include "netif.h"
-#include "pktbuf.h"
+#include <unique_tcp/net/netif.h>
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/net_err.h>
+#include <unique_tcp/net/net_cfg.h>
 
 #define IPV4_ADDR_SIZE 4
 

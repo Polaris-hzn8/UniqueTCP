@@ -1,13 +1,13 @@
 ﻿#ifndef DNS_H
 #define DNS_H
 
-#include "exmsg.h"
-#include "ipaddr.h"
-#include "net_cfg.h"
-#include "net_err.h"
-#include "nlist.h"
-#include "sys.h"
-#include "udp.h"
+#include <unique_tcp/net/sys.h>
+#include <unique_tcp/net/udp.h>
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/exmsg.h>
+#include <unique_tcp/net/ipaddr.h>
+#include <unique_tcp/net/net_cfg.h>
+#include <unique_tcp/net/net_err.h>
 
 #define DNS_PORT_DEFAULT 53
 #define DNS_QUERY_ClASS_INET 1

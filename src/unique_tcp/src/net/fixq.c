@@ -1,6 +1,6 @@
-#include "fixq.h"
 
-#include "dbg.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/fixq.h>
 
 net_err_t fixq_init(fixq_t* q, void** buf, int size, nlocker_type_t type) {
   q->size = size;

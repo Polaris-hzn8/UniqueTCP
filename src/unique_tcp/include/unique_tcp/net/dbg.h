@@ -1,8 +1,8 @@
 #ifndef DBG_H
 #define DBG_H
 
-#include "ipaddr.h"
-#include "net_cfg.h"
+#include <unique_tcp/net/ipaddr.h>
+#include <unique_tcp/net/net_cfg.h>
 
 #define DBG_STYLE_ERROR "\033[31m"
 #define DBG_STYLE_WARNING "\033[33m"

@@ -1,8 +1,7 @@
-#include "dbg.h"
 
 #include <stdarg.h>
-
-#include "sys_plat.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/platform/sys_plat.h>
 
 void dbg_print(int m_level, int s_level, const char* file, const char* func, int line, const char* fmt, ...) {
   static const char* title[] = {

@@ -2,11 +2,10 @@
 #define TOOLS_H
 
 #include <stdint.h>
-
-#include "ipaddr.h"
-#include "net_cfg.h"
-#include "net_err.h"
-#include "pktbuf.h"
+#include <unique_tcp/net/ipaddr.h>
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/net_cfg.h>
+#include <unique_tcp/net/net_err.h>
 
 net_err_t tools_init(void);
 

@@ -1,10 +1,10 @@
 #ifndef RAW_H
 #define RAW_H
 
-#include "net_err.h"
-#include "nlist.h"
-#include "pktbuf.h"
-#include "sock.h"
+#include <unique_tcp/net/sock.h>
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/net_err.h>
 
 typedef struct _raw_t {
   sock_t base;

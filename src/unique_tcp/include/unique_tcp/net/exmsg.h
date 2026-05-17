@@ -1,9 +1,9 @@
 #ifndef EXMSG_H
 #define EXMSG_H
 
-#include "net_err.h"
-#include "netif.h"
-#include "nlist.h"
+#include <unique_tcp/net/netif.h>
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/net_err.h>
 
 struct _func_msg_t;
 typedef net_err_t (*exmsg_func_t)(struct _func_msg_t* msg);

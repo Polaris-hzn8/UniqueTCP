@@ -2,11 +2,10 @@
 #define SOCK_H
 
 #include <stdint.h>
-
-#include "ipaddr.h"
-#include "net_err.h"
-#include "nlist.h"
-#include "sys.h"
+#include <unique_tcp/net/sys.h>
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/ipaddr.h>
+#include <unique_tcp/net/net_err.h>
 
 struct _sock_t;
 struct x_sockaddr;

@@ -2,8 +2,7 @@
 #define IPADDR_H
 
 #include <stdint.h>
-
-#include "net_err.h"
+#include <unique_tcp/net/net_err.h>
 
 #define IPV4_ADDR_SIZE 4
 

@@ -1,9 +1,9 @@
 #ifndef MBLOCK_H
 #define MBLOCK_H
 
-#include "net_cfg.h"
-#include "nlist.h"
-#include "nlocker.h"
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/nlocker.h>
+#include <unique_tcp/net/net_cfg.h>
 
 typedef struct _mblock_t {
   nlist_t free_list;

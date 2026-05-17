@@ -2,10 +2,9 @@
 #define ICMPV4_H
 
 #include <stdint.h>
-
-#include "ipaddr.h"
-#include "net_err.h"
-#include "pktbuf.h"
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/ipaddr.h>
+#include <unique_tcp/net/net_err.h>
 
 typedef enum _icmp_type_t {
   ICMPv4_ECHO_REQUEST = 8,

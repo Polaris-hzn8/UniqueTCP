@@ -1,9 +1,9 @@
-#include "tcp_out.h"
 
-#include "dbg.h"
-#include "ipv4.h"
-#include "protocol.h"
-#include "tools.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/ipv4.h>
+#include <unique_tcp/net/tools.h>
+#include <unique_tcp/net/tcp_out.h>
+#include <unique_tcp/net/protocol.h>
 
 const char* tcp_ostate_name(tcp_t* tcp) {
   static const char* state_name[] = {

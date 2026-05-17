@@ -2,12 +2,11 @@
 #define NETIF_H
 
 #include <stdint.h>
-
-#include "fixq.h"
-#include "ipaddr.h"
-#include "net_cfg.h"
-#include "nlist.h"
-#include "pktbuf.h"
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/ipaddr.h>
+#include <unique_tcp/net/net_cfg.h>
+#include <unique_tcp/net/net_err.h>
 
 typedef struct _netif_hwaddr_t {
   uint8_t addr[NETIF_HWADDR_SIZE];

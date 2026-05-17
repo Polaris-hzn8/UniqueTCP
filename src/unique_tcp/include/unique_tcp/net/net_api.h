@@ -1,8 +1,8 @@
 #ifndef NET_API_H
 #define NET_API_H
 
-#include "socket.h"
-#include "tools.h"
+#include <unique_tcp/net/socket.h>
+#include <unique_tcp/net/tools.h>
 
 #define x_htons(v) swap_u16(v)
 #define x_ntohs(v) swap_u16(v)

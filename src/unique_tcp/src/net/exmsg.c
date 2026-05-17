@@ -1,12 +1,12 @@
-#include "exmsg.h"
 
-#include "dbg.h"
-#include "fixq.h"
-#include "ipv4.h"
-#include "mblock.h"
-#include "sys.h"
-#include "sys_plat.h"
-#include "timer.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/sys.h>
+#include <unique_tcp/net/fixq.h>
+#include <unique_tcp/net/ipv4.h>
+#include <unique_tcp/net/exmsg.h>
+#include <unique_tcp/net/timer.h>
+#include <unique_tcp/net/mblock.h>
+#include <unique_tcp/platform/sys_plat.h>
 
 static void* msg_tbl[EXMSG_MSG_CNT];
 static fixq_t msg_queue;

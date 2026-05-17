@@ -1,15 +1,14 @@
-#include "udp.h"
 
-#include "dbg.h"
-#include "dns.h"
-#include "ipaddr.h"
-#include "mblock.h"
-#include "net_cfg.h"
-#include "nlist.h"
-#include "pktbuf.h"
-#include "protocol.h"
-#include "socket.h"
-#include "tools.h"
+#include <unique_tcp/net/udp.h>
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/ipaddr.h>
+#include <unique_tcp/net/mblock.h>
+#include <unique_tcp/net/net_cfg.h>
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/protocol.h>
+#include <unique_tcp/net/socket.h>
+#include <unique_tcp/net/tools.h>
 
 static udp_t udp_tbl[UDP_MAX_NR];
 static mblock_t udp_mblock;

@@ -1,14 +1,14 @@
 ﻿#ifndef TCP_H
 #define TCP_H
 
-#include "dbg.h"
-#include "net_cfg.h"
-#include "net_err.h"
-#include "nlist.h"
-#include "pktbuf.h"
-#include "sock.h"
-#include "tcp_buf.h"
-#include "timer.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/sock.h>
+#include <unique_tcp/net/timer.h>
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/tcp_buf.h>
+#include <unique_tcp/net/net_cfg.h>
+#include <unique_tcp/net/net_err.h>
 
 #define TCP_DEFAULT_MSS 536
 

@@ -1,12 +1,11 @@
-#include "tcp.h"
 
-#include "dbg.h"
-#include "mblock.h"
-#include "protocol.h"
-#include "socket.h"
-#include "tcp_out.h"
-#include "tcp_state.h"
-#include "tools.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/tcp.h>
+#include <unique_tcp/net/tools.h>
+#include <unique_tcp/net/socket.h>
+#include <unique_tcp/net/tcp_out.h>
+#include <unique_tcp/net/protocol.h>
+#include <unique_tcp/net/tcp_state.h>
 
 static tcp_t tcp_tbl[TCP_MAX_NR];
 static mblock_t tcp_mblock;

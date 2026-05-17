@@ -1,8 +1,8 @@
 #ifndef UDP_H
 #define UDP_H
 
-#include "pktbuf.h"
-#include "sock.h"
+#include <unique_tcp/net/sock.h>
+#include <unique_tcp/net/pktbuf.h>
 
 #pragma pack(1)
 

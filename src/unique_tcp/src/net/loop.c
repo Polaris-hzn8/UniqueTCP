@@ -1,8 +1,8 @@
-#include "loop.h"
 
-#include "dbg.h"
-#include "exmsg.h"
-#include "netif.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/loop.h>
+#include <unique_tcp/net/exmsg.h>
+#include <unique_tcp/net/netif.h>
 
 static net_err_t loop_open(netif_t* netif, void* data) {
   netif->type = NETIF_TYPE_LOOP;

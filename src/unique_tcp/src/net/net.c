@@ -1,22 +1,22 @@
-#include "net.h"
 
-#include "arp.h"
-#include "dbg.h"
-#include "dns.h"
-#include "ether.h"
-#include "exmsg.h"
-#include "icmpv4.h"
-#include "ipv4.h"
-#include "loop.h"
-#include "net_plat.h"
-#include "netif.h"
-#include "pktbuf.h"
-#include "raw.h"
-#include "sock.h"
-#include "tcp.h"
-#include "timer.h"
-#include "tools.h"
-#include "udp.h"
+#include <unique_tcp/net/net.h>
+
+#include <unique_tcp/net/arp.h>
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/dns.h>
+#include <unique_tcp/net/ether.h>
+#include <unique_tcp/net/exmsg.h>
+#include <unique_tcp/net/icmpv4.h>
+#include <unique_tcp/net/ipv4.h>
+#include <unique_tcp/net/loop.h>
+#include <unique_tcp/net/netif.h>
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/raw.h>
+#include <unique_tcp/net/sock.h>
+#include <unique_tcp/net/timer.h>
+#include <unique_tcp/net/tools.h>
+#include <unique_tcp/net/udp.h>
+#include <unique_tcp/platform/net_plat.h>
 
 net_err_t net_init(void) {
   dbg_info(DBG_INIT, "init net");

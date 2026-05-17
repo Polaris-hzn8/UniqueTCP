@@ -1,10 +1,10 @@
-#include "pktbuf.h"
 
-#include "dbg.h"
-#include "mblock.h"
-#include "nlocker.h"
-#include "sys_plat.h"
-#include "tools.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/pktbuf.h>
+#include <unique_tcp/net/mblock.h>
+#include <unique_tcp/net/nlocker.h>
+#include <unique_tcp/net/tools.h>
+#include <unique_tcp/platform/sys_plat.h>
 
 static nlocker_t locker;
 static pktblk_t block_buffer[PKTBUF_BLK_CNT];

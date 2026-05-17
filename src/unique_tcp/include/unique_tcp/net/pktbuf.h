@@ -2,10 +2,9 @@
 #define PKTBUF_H
 
 #include <stdint.h>
-
-#include "net_cfg.h"
-#include "net_err.h"
-#include "nlist.h"
+#include <unique_tcp/net/nlist.h>
+#include <unique_tcp/net/net_cfg.h>
+#include <unique_tcp/net/net_err.h>
 
 typedef struct _pktblk_t {
   nlist_node_t node;

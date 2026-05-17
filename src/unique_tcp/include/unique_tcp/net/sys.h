@@ -1,7 +1,7 @@
 ﻿#ifndef SYS_H
 #define SYS_H
 
-#include "net_plat.h"
+#include <unique_tcp/platform/net_plat.h>
 
 void sys_time_curr(net_time_t* time);
 int sys_time_goes(net_time_t* pre);

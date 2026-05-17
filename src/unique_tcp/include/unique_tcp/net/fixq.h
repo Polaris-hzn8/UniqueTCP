@@ -1,8 +1,8 @@
 #ifndef FIX_H
 #define FIX_H
 
-#include "nlocker.h"
-#include "sys.h"
+#include <unique_tcp/net/sys.h>
+#include <unique_tcp/net/nlocker.h>
 
 typedef struct _fixq_t {
   int size;

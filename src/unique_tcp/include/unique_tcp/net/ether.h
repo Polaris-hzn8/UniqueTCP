@@ -2,9 +2,8 @@
 #define ETHER_H
 
 #include <stdint.h>
-
-#include "net_err.h"
-#include "netif.h"
+#include <unique_tcp/net/netif.h>
+#include <unique_tcp/net/net_err.h>
 
 #define ETHER_HWA_SIZE 6
 #define ETHER_MTU 1500

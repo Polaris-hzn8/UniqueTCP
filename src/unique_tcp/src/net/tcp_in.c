@@ -1,10 +1,10 @@
-#include "tcp_in.h"
 
-#include "dbg.h"
-#include "protocol.h"
-#include "tcp_out.h"
-#include "tcp_state.h"
-#include "tools.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/tools.h>
+#include <unique_tcp/net/tcp_in.h>
+#include <unique_tcp/net/tcp_out.h>
+#include <unique_tcp/net/protocol.h>
+#include <unique_tcp/net/tcp_state.h>
 
 void tcp_seg_init(tcp_seg_t* seg, pktbuf_t* buf, ipaddr_t* local, ipaddr_t* remote) {
   seg->buf = buf;

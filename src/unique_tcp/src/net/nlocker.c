@@ -1,7 +1,7 @@
-#include "nlocker.h"
 
-#include "net_err.h"
-#include "sys_plat.h"
+#include <unique_tcp/net/nlocker.h>
+#include <unique_tcp/net/net_err.h>
+#include <unique_tcp/platform/sys_plat.h>
 
 net_err_t nlocker_init(nlocker_t* locker, nlocker_type_t type) {
   if (type == NLOCKER_THREAD) {

@@ -1,8 +1,8 @@
-#include "tcp_state.h"
 
-#include "tcp_in.h"
-#include "tcp_out.h"
-#include "tools.h"
+#include <unique_tcp/net/tools.h>
+#include <unique_tcp/net/tcp_in.h>
+#include <unique_tcp/net/tcp_out.h>
+#include <unique_tcp/net/tcp_state.h>
 
 const char* tcp_state_name(tcp_state_t state) {
   static const char* state_name[] = {

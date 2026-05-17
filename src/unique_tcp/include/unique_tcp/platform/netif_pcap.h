@@ -2,9 +2,8 @@
 #define NETIF_PCAP_H
 
 #include <stdint.h>
-
-#include "net_err.h"
-#include "netif.h"
+#include <unique_tcp/net/netif.h>
+#include <unique_tcp/net/net_err.h>
 
 typedef struct _pcap_data_t {
   const char* ip;

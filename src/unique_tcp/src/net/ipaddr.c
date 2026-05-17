@@ -1,6 +1,6 @@
-#include "ipaddr.h"
 
-#include "net_err.h"
+#include <unique_tcp/net/ipaddr.h>
+#include <unique_tcp/net/net_err.h>
 
 void ipaddr_set_any(ipaddr_t* ip) {
   ip->type = IPADDR_V4;

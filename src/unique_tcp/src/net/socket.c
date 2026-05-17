@@ -1,10 +1,10 @@
-#include "socket.h"
 
-#include "dbg.h"
-#include "dns.h"
-#include "exmsg.h"
-#include "sock.h"
-#include "sys.h"
+#include <unique_tcp/net/dbg.h>
+#include <unique_tcp/net/dns.h>
+#include <unique_tcp/net/sys.h>
+#include <unique_tcp/net/sock.h>
+#include <unique_tcp/net/exmsg.h>
+#include <unique_tcp/net/socket.h>
 
 int x_socket(int family, int type, int protocol) {
   sock_req_t req;
