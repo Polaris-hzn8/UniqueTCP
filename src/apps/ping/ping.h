@@ -57,7 +57,6 @@ typedef struct _ping_t {
   echo_reply_t reply;
 } ping_t;
 
-void ping_run(ping_t *ping, const char *dest, int count, int size,
-              int interval);
+void ping_run(ping_t* ping, const char* dest, int count, int size, int interval);
 
 #endif

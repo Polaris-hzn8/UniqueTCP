@@ -20,7 +20,7 @@ int tcp_echo_server_start(int port) {
   server_addr.sin_addr.s_addr = INADDR_ANY;
   server_addr.sin_port = htons(port);
 
-  if (bind(s, (const struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
+  if (bind(s, (const struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
     plat_printf("bind error\n");
     goto end;
   }
@@ -30,14 +30,14 @@ int tcp_echo_server_start(int port) {
   while (1) {
     struct sockaddr_in client_addr;
     socklen_t addr_len = sizeof(client_addr);
-    int client = accept(s, (struct sockaddr *)&client_addr, &addr_len);
+    int client = accept(s, (struct sockaddr*)&client_addr, &addr_len);
     if (client < 0) {
       printf("accept error\n");
       break;
     }
 
-    plat_printf("tcp echo server: connect ip: %s, port: %d\n",
-                inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
+    plat_printf(
+      "tcp echo server: connect ip: %s, port: %d\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
 
 #if 0
     char buffer[192];

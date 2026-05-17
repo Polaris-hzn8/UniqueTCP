@@ -6,8 +6,8 @@
 #include "net_api.h"
 #include "sys_plat.h"
 
-static uint16_t x_checksum_16(void *buf, uint16_t len) {
-  uint16_t *curr_buf = (uint16_t *)buf;
+static uint16_t x_checksum_16(void* buf, uint16_t len) {
+  uint16_t* curr_buf = (uint16_t*)buf;
   uint32_t checksum = 0;
 
   while (len > 1) {
@@ -16,7 +16,7 @@ static uint16_t x_checksum_16(void *buf, uint16_t len) {
   }
 
   if (len > 0) {
-    checksum += *(uint8_t *)curr_buf;
+    checksum += *(uint8_t*)curr_buf;
   }
 
   uint16_t high;
@@ -27,8 +27,7 @@ static uint16_t x_checksum_16(void *buf, uint16_t len) {
   return (uint16_t)~checksum;
 }
 
-void ping_run(ping_t *ping, const char *dest, int count, int size,
-              int interval) {
+void ping_run(ping_t* ping, const char* dest, int count, int size, int interval) {
   static uint16_t start_id = PING_DEFAULT_ID;
   // WSADATA wsdata;
   // WSAStartup(MAKEWORD(2, 2), &wsdata);
@@ -53,15 +52,15 @@ void ping_run(ping_t *ping, const char *dest, int count, int size,
   tmo.tv_sec = 0;
   tmo.tv_usec = 0;
 #endif
-  setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, (const char *)&tmo, sizeof(tmo));
+  setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tmo, sizeof(tmo));
   struct sockaddr_in addr;
   plat_memset(&addr, 0, sizeof(addr));
   addr.sin_family = AF_INET;
-  addr.sin_addr.s_addr = *(uint32_t *)hent.h_addr_list[0];
+  addr.sin_addr.s_addr = *(uint32_t*)hent.h_addr_list[0];
   addr.sin_port = 0;
 
 #if 1
-  err = connect(s, (const struct sockaddr *)&addr, sizeof(addr));
+  err = connect(s, (const struct sockaddr*)&addr, sizeof(addr));
   if (err != 0) {
     printf("connect failed.\n");
     closesocket(s);
@@ -87,7 +86,7 @@ void ping_run(ping_t *ping, const char *dest, int count, int size,
     int size = sendto(s, (const char *)&ping->req, total_size, 0,
                       (const struct sockaddr *)&addr, sizeof(addr));
 #endif
-    int size = send(s, (const char *)&ping->req, total_size, 0);
+    int size = send(s, (const char*)&ping->req, total_size, 0);
 
     if (size < 0) {
       plat_printf("send ping request failed.\n");
@@ -105,15 +104,14 @@ void ping_run(ping_t *ping, const char *dest, int count, int size,
       size = recvfrom(s, (char *)&ping->reply, sizeof(ping->reply), 0,
                       (struct sockaddr *)&from_addr, &addr_len);
 #endif
-      size = recv(s, (char *)&ping->reply, sizeof(ping->reply), 0);
+      size = recv(s, (char*)&ping->reply, sizeof(ping->reply), 0);
 
       if (size < 0) {
         plat_printf("ping recv tmo\n");
         break;
       }
 
-      if ((ping->req.echo_hdr.id == ping->reply.echo_hdr.id) &&
-          (ping->reply.echo_hdr.seq == ping->req.echo_hdr.seq)) {
+      if ((ping->req.echo_hdr.id == ping->reply.echo_hdr.id) && (ping->reply.echo_hdr.seq == ping->req.echo_hdr.seq)) {
         break;
       }
     } while (1);
@@ -125,14 +123,12 @@ void ping_run(ping_t *ping, const char *dest, int count, int size,
         continue;
       }
 
-      ip_hdr_t *iphdr = &ping->reply.iphdr;
+      ip_hdr_t* iphdr = &ping->reply.iphdr;
       int send_size = fill_size;
       if (recv_size == send_size) {
-        printf("reply from %s: bytes=%d, ", inet_ntoa(addr.sin_addr),
-               recv_size);
+        printf("reply from %s: bytes=%d, ", inet_ntoa(addr.sin_addr), recv_size);
       } else {
-        printf("reply from %s: bytes=%d (send=%d), ", inet_ntoa(addr.sin_addr),
-               recv_size, send_size);
+        printf("reply from %s: bytes=%d (send=%d), ", inet_ntoa(addr.sin_addr), recv_size, send_size);
       }
 
       int diff_ms = (clock() - time) / (CLOCKS_PER_SEC / 1000);

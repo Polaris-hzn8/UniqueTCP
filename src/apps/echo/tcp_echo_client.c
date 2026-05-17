@@ -5,7 +5,7 @@
 #include "net_api.h"
 #include "sys_plat.h"
 
-int tcp_echo_client_start(const char *ip, int port) {
+int tcp_echo_client_start(const char* ip, int port) {
   plat_printf("tcp echo client, ip: %s, port: %d\n", ip, port);
 
   int s = socket(AF_INET, SOCK_STREAM, 0);
@@ -19,8 +19,7 @@ int tcp_echo_client_start(const char *ip, int port) {
   server_addr.sin_family = AF_INET;
   server_addr.sin_addr.s_addr = inet_addr(ip);
   server_addr.sin_port = htons(port);
-  if (connect(s, (const struct sockaddr *)&server_addr, sizeof(server_addr)) <
-      0) {
+  if (connect(s, (const struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
     plat_printf("connect error\n");
     goto end;
   }

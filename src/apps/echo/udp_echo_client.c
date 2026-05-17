@@ -5,7 +5,7 @@
 #include "net_api.h"
 #include "sys_plat.h"
 
-int udp_echo_client_start(const char *ip, int port) {
+int udp_echo_client_start(const char* ip, int port) {
   plat_printf("udp echo client, ip: %s, port: %d\n", ip, port);
 
   int s = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
@@ -20,7 +20,7 @@ int udp_echo_client_start(const char *ip, int port) {
   server_addr.sin_addr.s_addr = inet_addr(ip);
   server_addr.sin_port = htons(port);
 
-  connect(s, (const struct sockaddr *)&server_addr, sizeof(server_addr));
+  connect(s, (const struct sockaddr*)&server_addr, sizeof(server_addr));
 
   char buf[128];
   plat_printf(">>");

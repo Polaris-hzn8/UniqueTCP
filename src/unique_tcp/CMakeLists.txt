@@ -1,45 +1,35 @@
-# cmake最低版本要求
-cmake_minimum_required(VERSION 3.7)
+file(GLOB NET_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/net/*.c")
+file(GLOB PLATFORM_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/platform/*.c")
 
-# 设置工程的名字，生成的可执行文件也将使用该名称，如net.exe
-project(net)
-set(CMAKE_C_STANDARD 99)
+add_library(unique_tcp SHARED ${NET_SOURCES} ${PLATFORM_SOURCES})
 
-LINK_DIRECTORIES(
-    ${PROJECT_SOURCE_DIR}/npcap/Lib/x64          # win64使用
-    #${PROJECT_SOURCE_DIR}/lib/npcap/Lib/             # win32使用
+target_include_directories(unique_tcp PUBLIC
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/unique_tcp>"
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/unique_tcp/net>"
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/unique_tcp/platform>"
+  "$<BUILD_INTERFACE:${UniqueTCP_NPCAP_ROOT}/Include>"
 )
 
-# 给visual studio编译器使用的宏，Enable GCC debug
-add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+target_compile_definitions(unique_tcp PUBLIC NET_DRIVER_PCAP)
 
-# 头文件搜索路径，使得c文件中可以直接使用#include "xxx.h"，而不必加前缀
-include_directories(
-        ${PROJECT_SOURCE_DIR}
-        ${PROJECT_SOURCE_DIR}/npcap/Include          # pcap路径
-        ${PROJECT_SOURCE_DIR}/src/net/net 
-        ${PROJECT_SOURCE_DIR}/src/plat
-        ${PROJECT_SOURCE_DIR}/src/app
-)
-
-# 搜索src下面的所有源文件，生成文件列表
-file(GLOB_RECURSE SOURCE_LIST "src/*.c" "src/*.h")
-
-# 将源文件列表加入到工程中
-add_executable(${PROJECT_NAME} ${SOURCE_LIST})
-
-# 与一些库进行编译链接，生成最终的程序
-# 针对网络的平台配置
-add_definitions(-DNET_DRIVER_PCAP)    # use pcap
-
-message(STATUS "current platform: ${CMAKE_HOST_SYSTEM_NAME}")
-if(CMAKE_HOST_SYSTEM_NAME MATCHES "Windows")
-    add_definitions(-DSYS_PLAT_WINDOWS)
-    target_link_libraries(${PROJECT_NAME} wpcap packet Ws2_32)
+if(WIN32)
+  target_compile_definitions(unique_tcp PUBLIC SYS_PLAT_WINDOWS)
+  if(MSVC)
+    target_compile_definitions(unique_tcp PRIVATE _CRT_SECURE_NO_WARNINGS)
+    set_target_properties(unique_tcp PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+    target_link_options(unique_tcp PRIVATE /EXPORT:netdev_ops)
+  endif()
+  if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+    target_link_directories(unique_tcp PUBLIC "${UniqueTCP_NPCAP_ROOT}/Lib/x64")
+  else()
+    target_link_directories(unique_tcp PUBLIC "${UniqueTCP_NPCAP_ROOT}/Lib")
+  endif()
+  target_link_libraries(unique_tcp PUBLIC wpcap Packet Ws2_32)
 else()
-    # Linux和Mac上的特定配置
-    add_definitions(-DSYS_PLAT_LINUX)
-    target_link_libraries(${PROJECT_NAME} pthread pcap)
+  if(APPLE)
+    target_compile_definitions(unique_tcp PUBLIC SYS_PLAT_MAC)
+  else()
+    target_compile_definitions(unique_tcp PUBLIC SYS_PLAT_LINUX)
+  endif()
+  target_link_libraries(unique_tcp PUBLIC pthread pcap)
 endif()
-
-
